@@ -1,0 +1,11 @@
+#/bin/bash
+
+./gradlew clean bootJar
+
+docker build -t {docker-hub-계정명}/trip .
+
+docker push trip
+
+docker run -d -p 8080:8080 --name trip {docker-hub-계정명}/trip
+
+docker logs -f trip

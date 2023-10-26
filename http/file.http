@@ -1,0 +1,33 @@
+# --------------------------------------
+# file.http
+# --------------------------------------
+
+### 파일 업로드
+POST http://localhost:8080/attach
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="refId"
+
+2ccc806c-6787-4964-8d7b-22ee3c295d7e
+--WebAppBoundary
+Content-Disposition: form-data; name="fileType"
+
+SCHEDULE
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="guide-img.png"
+
+< guide-img.png
+--WebAppBoundary--
+
+### 파일 정보 조회 (개별)
+GET http://152.67.204.40:8080/attach/find/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+### 파일 정보 조회 리스트 (전체)
+GET http://152.67.204.40:8080/attach/find/all
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+
+

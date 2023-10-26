@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  trip:
+    container_name: trip
+    image: {docker-hub-계정명}/trip
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./data:/data
+    environment:
+      TZ: Asia/Seoul

@@ -1,0 +1,77 @@
+#-------------------------
+# application.yml
+# profile 을 타지않는 전역 설정
+#-------------------------
+spring:
+  application:
+    name: why-trip
+  profiles:
+    active: dev
+  banner:
+    charset: UTF-8
+    location: "classpath:config/app-banner.txt"
+  lifecycle:
+    timeout-per-shutdown-phase: 35s # graceful shutdown 유예시간 설정 (default 30s)
+
+#-------------------------
+# OpenFeign
+#-------------------------
+feign:
+  client:
+    config:
+      default: # @FeignClient 에서 name 값, 전역으로 설정하려면 default
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: FULL
+
+
+#-------------------------
+# server config
+#-------------------------
+server:
+  shutdown: graceful
+
+  #-------------------------
+  # server.error
+  #-------------------------
+  error:
+    include-exception: false    # Response 에 Exception 을 표시할지
+    include-message: never      # Response 에 Exception Message 를 표시할지 (never | always | on_param)
+    include-stacktrace: never   # Response 에 Stack Trace 를 표시할지 (never | always | on_param) on_trace_params 은 deprecated
+    whitelabel.enabled: true    # 에러 발생 시 Spring 기본 에러 페이지 노출 여부
+  #-------------------------
+  # server.servlet
+  #-------------------------
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      force-response: true
+  tomcat:
+    uri-encoding: UTF-8
+
+#--------------------------
+# app info
+#--------------------------
+app-info:
+  title: "${name}"
+  build:
+    version: "${version}"
+    timestamp: "${ext.timestamp}"
+
+#--------------------------
+# jwt secret
+#--------------------------
+jwt:
+  secret: 1e47d80ac0698f4cf303c6e7ba9a64a07767a21cb3674336489a7d96dee4762ee11e6827a04fa4c172174e88063f085f1d3c9370ead4f3aab44d30b31ea7bd05
+  accessToken:
+    # starter 테스트 용으로 24 시간으로 해놓음 추후 변경예정
+    # 1000 * 60 * 60* 24 = 86400000 (24 시간)
+    expiration: 86400000 # 액세스 토큰 만료 시간 (초 단위)
+  refreshToken:
+    # 1000 * 60 * 60* 24 = 86400000
+    expiration: 86400000 # 리프레시 토큰 만료 시간 (초 단위)
+  issuer: whytrip  # JWT 발급자(issuer)
+  audience: user   # JWT 대상(audience)
+
+file.upload.location: /data

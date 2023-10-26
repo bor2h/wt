@@ -1,0 +1,36 @@
+#-------------------------
+# prod
+# application-prod.yml
+#-------------------------
+
+spring:
+  #-------------------------
+  # spring.datasource
+  #-------------------------
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/trip
+    username: trip
+    password: trip1234
+    driverClassName: org.mariadb.jdbc.Driver
+
+  #-------------------------
+  # spring.jpa
+  #-------------------------
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+
+#-------------------------
+# logging
+#-------------------------
+logging:
+  config: classpath:log4j2.xml
+
+
+file.upload.location: /data

@@ -1,0 +1,42 @@
+# ------------------------
+# 가이드
+# ------------------------
+
+### 가이드 신청
+POST http://localhost:8080/guide
+accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="guide-img-2.png"
+
+< guide-img-2.png
+--WebAppBoundary
+Content-Disposition: form-data; name="content"
+
+😎1인 여행을 100회 이상 해본 경험이 있어요
+--WebAppBoundary--
+
+### 가이드 전체 리스트 조회
+GET http://localhost:8080/guide/all
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTc5OTQ1NTMsImlhdCI6MTY5NzkwODE1MywiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.cHpl2jLBdZP1h4EFI-SYTM7v_j8lKAjQzfmV_ZIzXHQ
+
+### 가이드 페이징 리스트 조회
+GET http://localhost:8080/guide?page=0&size=5&sort=createdAt
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTc5OTQ1NTMsImlhdCI6MTY5NzkwODE1MywiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.cHpl2jLBdZP1h4EFI-SYTM7v_j8lKAjQzfmV_ZIzXHQ
+
+### 가이드 상세보기 (MyPage)
+GET http://localhost:8080/guide/detail
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTc5OTQ1NTMsImlhdCI6MTY5NzkwODE1MywiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.cHpl2jLBdZP1h4EFI-SYTM7v_j8lKAjQzfmV_ZIzXHQ
+
+### 가이드 좋아요
+GET http://localhost:8080/guide/like/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+### 가이드 좋아요 해제
+GET http://localhost:8080/guide/dislike/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTc5OTQ1NTMsImlhdCI6MTY5NzkwODE1MywiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.cHpl2jLBdZP1h4EFI-SYTM7v_j8lKAjQzfmV_ZIzXHQ
+
+
+

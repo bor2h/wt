@@ -1,0 +1,20 @@
+# -------------------------------
+# admin 관리자 API
+# -------------------------------
+### 사용자 단건 조회
+GET http://localhost:8080/admin/users/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgxNTQyNTYsImlhdCI6MTY5ODA2Nzg1NiwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiI5IiwibG9naW5JZCI6ImppbiIsInJvbGUiOiJHVUVTVCIsImVtYWlsIjoiamluQG5hdmVyLmNvbSJ9.ZLDrmEPYxYNl32qfI9fuH35hYb0tN_thbxTuCUvMC2E
+
+### 사용자 정지
+GET http://localhost:8080/admin/users/ban?userId=1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgxNTQyNTYsImlhdCI6MTY5ODA2Nzg1NiwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiI5IiwibG9naW5JZCI6ImppbiIsInJvbGUiOiJHVUVTVCIsImVtYWlsIjoiamluQG5hdmVyLmNvbSJ9.ZLDrmEPYxYNl32qfI9fuH35hYb0tN_thbxTuCUvMC2Eㅌ`
+
+### 사용자 검색 리스트
+GET http://localhost:8080/admin/users/search?page=0&size=1&sort=createdAt
+# userName=홍길동&gender=MALE&userStatus=ACTIVE&role=ADMIN&birthDateStart=19930101&birthDateEnd=19931231
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgxNTQyNTYsImlhdCI6MTY5ODA2Nzg1NiwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiI5IiwibG9naW5JZCI6ImppbiIsInJvbGUiOiJHVUVTVCIsImVtYWlsIjoiamluQG5hdmVyLmNvbSJ9.ZLDrmEPYxYNl32qfI9fuH35hYb0tN_thbxTuCUvMC2Eㅌ`
+
+### 가이드 검수 상태 수정
+PUT http://localhost:8080/admin/guide/1/Y
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgxNTQyNTYsImlhdCI6MTY5ODA2Nzg1NiwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiI5IiwibG9naW5JZCI6ImppbiIsInJvbGUiOiJHVUVTVCIsImVtYWlsIjoiamluQG5hdmVyLmNvbSJ9.ZLDrmEPYxYNl32qfI9fuH35hYb0tN_thbxTuCUvMC2E
+

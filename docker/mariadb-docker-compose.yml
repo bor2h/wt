@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: root1234
+      MARIADB_DATABASE: trip
+      MARIADB_USER: trip
+      MARIADB_PASSWORD: trip1234

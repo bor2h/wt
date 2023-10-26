@@ -1,0 +1,62 @@
+# -------------------------------
+# schedule
+# -------------------------------
+### 일정 저장
+POST http://localhost:8080/schedule
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTc5OTk0ODUsImlhdCI6MTY5NzkxMzA4NSwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.boPwEgtmrchmCzXH5rj8VqWddjqAbw8qIX0umY7t6xE
+Content-Type: application/json
+
+{
+  "scheduleImage": "2",
+  "scheduleId": "2ccc806c-6787-4964-8d7b-22ee3c295d7e",
+  "scheduleName": "뚜벅이의 걷기 일기",
+  "startingLocation": "묵호역",
+  "distance": "장거리",
+  "hashtag": "#걷기여행#산책로",
+  "adults": 2,
+  "child": 2,
+  "days": 3,
+  "startAt": "2023-11-13",
+  "endAt": "2023-11-15",
+  "daySchedules": [
+    {
+      "dateTime": "2023-11-13 13:31:52",
+      "dateNumber": 1,
+      "address": "연경",
+      "checkList": "수건,양말,화장품"
+    },
+    {
+      "dateTime": "2023-11-14 14:31:52",
+      "dateNumber": 2,
+      "address": "차이나타운",
+      "checkList": "수건,양말,화장품"
+    },
+    {
+      "dateTime": "2023-11-15 18:31:52",
+      "dateNumber": 3,
+      "address": "동인천 NQCR 리머호텔",
+      "checkList": "수건,양말,화장품"
+    }
+  ]
+}
+
+### 여행 기록 단일 조회
+GET http://localhost:8080/schedule/2ccc806c-6787-4964-8d7b-22ee3c295d7e
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+### 나의 여행 기록
+GET http://localhost:8080/schedule/my
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+### 여행 기록 전체 조회
+GET http://localhost:8080/schedule
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTgwMDE4MjQsImlhdCI6MTY5NzkxNTQyNCwiaXNzIjoid2h5dHJpcCIsImF1ZCI6InVzZXIiLCJzdWIiOiIxIiwibG9naW5JZCI6ImhvbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImhvbmdAbmF2ZXIuY29tIn0.wLLhEnN3EjVOe_ljKZz2sZp1wcdUouCK2j7dqSNsdTk
+
+### uuid 생성
+GET http://localhost:8080/schedule/uuid
+
+###
+
+
+
+
